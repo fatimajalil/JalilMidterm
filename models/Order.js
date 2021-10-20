@@ -1,7 +1,7 @@
 // link to mongoose
 const mongoose = require('mongoose')
 
-var ordersSchema = new mongoose.Schema(
+let ordersSchema = new mongoose.Schema(
     {
         firstName: {
             type: String,

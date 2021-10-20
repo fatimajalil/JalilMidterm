@@ -11,8 +11,11 @@ router.get('/', (req, res) =>{
             res.end(err)
         }
         else{
-            res.render('orders/index');
-            orders: orders
+            res.render('orders/index', {
+                orders: orders,
+                title: 'Orders'
+            });
+
         }
     })
 
