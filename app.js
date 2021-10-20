@@ -7,6 +7,22 @@ var logger = require('morgan');
 var indexRouter = require('./controllers/index');
 var usersRouter = require('./controllers/users');
 
+// mongoose db
+const mongoose = require('mongoose')
+const globals = require('./config/globals')
+
+mongoose.connect(globals.db, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(
+    (res) => {
+      console.log('Connected to mongodb')
+    }
+).catch( () =>
+{
+  console.log('Could not connect')
+})
+
 var app = express();
 
 // view engine setup
