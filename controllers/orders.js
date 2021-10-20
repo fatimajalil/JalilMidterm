@@ -43,4 +43,23 @@ router.post('/create', (req,res) =>
     })
 })
 
+// edit
+router.get('/edit/:_id',(req, res) =>{
+    let _id = req.params_id
+    Orders.findById(_id,(err,order)=>{
+        if(err)
+        {
+            console.log(err)
+            res.end(err)
+        }
+        else
+        {
+            res.render('Orders',{
+                title: 'order details',
+                order: orders
+            })
+        }
+        }
+    )
+})
 module.exports = router;
