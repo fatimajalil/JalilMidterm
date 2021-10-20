@@ -20,5 +20,27 @@ router.get('/', (req, res) =>{
     })
 
 });
+router.get('/create', (req,res)=>{
+    res.render('orders/create',{
+        title: 'Add'
+    })
+})
+// post
+router.post('/create', (req,res) =>
+{
+    Orders.create({
+        firstName: req.body.firstName
+    }, (err, newOrder)=>{
+        if(err)
+        {
+            console.log(err)
+            res.end(err)
+        }
+        else
+        {
+            res.redirect('/Orders')
+        }
+    })
+})
 
 module.exports = router;

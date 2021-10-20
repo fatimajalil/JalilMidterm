@@ -1,7 +1,10 @@
 <h1> Order</h1>
+<a href="/orders/create"> add </a>
+
 <ul>
     {{#each orders}}
             <li> {{this.firstName}}</li>
         {{/each}}
 
 </ul>
+<a href="/orders/edit/{{this._id}}"> edit</a>
